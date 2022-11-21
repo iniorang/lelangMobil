@@ -35,7 +35,7 @@ $list = mysqli_query($mysqli,"SELECT * FROM kendaraan ORDER BY id DESC")
             echo "<td>".$car_data['nilai_kondisi_exterior']."</td>";
             echo "<td> Rp".$car_data['harga_awal']."</td>";
             echo "<td><a href='edit.php?id=$car_data[id]'>Edit</a>
-            | <a href='delete.php?id=$car_data[id]'>Delete</a></td></tr>" ;
+            | <a href='delet.php?id=$car_data[id]'>Delete</a></td></tr>" ;
         }
         ?>
     </table>

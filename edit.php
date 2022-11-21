@@ -21,9 +21,11 @@
         $exterior = $_POST['exterior_form'];
         $harga = $_POST['harga_form'];
 
-        $list = mysqli_query($mysqli,"UPDATE kendaraan SET tahun_kendaraan='$thn',merek_kendaraan='$merek',
-        model_kendaraan='$model',transmisi_kendaraan='$trans',plat_no_kendaraan='$plat',nilai_kondisi_interior='$inter',nilai_kondisi_mesin='$mesin',
-        nilai_kondisi_exterior='$exterior',harga_awal='$harga' WHERE id=$id");
+        $list = mysqli_query($mysqli,"UPDATE kendaraan SET tahun_kendaraan='$thn',
+        merek_kendaraan='$merek',model_kendaraan='$model',transmisi_kendaraan='$trans',
+        plat_no_kendaraan='$plat',nilai_kondisi_interior='$inter',nilai_kondisi_mesin='$mesin',
+        nilai_kondisi_exterior='$exterior',harga_awal='$harga' WHERE id='$id'");
+        header("Location:Dashboard.php");
     }
     ?>
 
@@ -33,15 +35,15 @@
     $list = mysqli_query($mysqli,"SELECT * FROM kendaraan WHERE id=$id");
     while($car_data = mysqli_fetch_array($list))
     {
-        $thn = $car_data['tahun_form'];
-        $merek = $car_data['merek_form'];
-        $model = $car_data['model_form'];
-        $trans = $car_data['transmission'];
-        $plat = $car_data['plat_form'];
-        $inter = $car_data['interior_form'];
-        $mesin = $car_data['mesin_form'];
-        $exterior = $car_data['exterior_form'];
-        $harga = $car_data['harga_form'];
+        $thn = $car_data['tahun_kendaraan'];
+        $merek = $car_data['merek_kendaraan'];
+        $model = $car_data['model_kendaraan'];
+        $trans = $car_data['transmisi_kendaraan'];
+        $plat = $car_data['plat_no_kendaraan'];
+        $inter = $car_data['nilai_kondisi_interior'];
+        $mesin = $car_data['nilai_kondisi_mesin'];
+        $exterior = $car_data['nilai_kondisi_exterior'];
+        $harga = $car_data['harga_awal'];
     }
     ?>
     
@@ -60,8 +62,8 @@
             <input type="text" name="model_form" value=<?php echo $model;?> required>
         </p>
             <label for="Transmission">Transmission</label><br>
-            <input type="radio" name="transmission" value="Automatic" required>Automatic
-            <input type="radio" name="transmission" value="Manual">Manual
+            <input type="radio" name="transmission" value="Automatic" required <?php if($trans == 'Automatic') echo 'checked="checked"'?>>Automatic
+            <input type="radio" name="transmission" value="Manual" <?php if($trans == 'Manual') echo 'checked="checked"'?>>Manual
         <p>
             <label for="Plat">Plat Nomer kendaraan</label><br>
             <input type="text" name="plat_form" value=<?php echo $plat;?> required>
