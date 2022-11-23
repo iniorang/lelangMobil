@@ -13,7 +13,7 @@
 <body>
     <div class="form-group">
         <form action="tambah.php" method="post">
-            <div class="form-input">
+            <div class="form-input" enctype="multipart/form-data">
                 <label for="Tahun">Tahun kendaraan</label><br>
                 <input type="number" name="tahun_form" required>
             </div>
@@ -50,10 +50,14 @@
                 <label for="Harga">Harga awal</label><br>
                 <input type="number" name="harga_form" required>
             </div>
+            <div class="form-input">
+                <label for="Gambar">Gambar</label><br>
+                <input type="file" name="gambar_form" required>
+            </div>
             <button type="submit" name="Submit">Simpan</button>
         </form>
         <a href="Dashboard.php">
-            <button>Batalkan</button>
+            <button type="cancel" name="Cancel">Batalkan</button>
         </a>
     </div>
     <?php
@@ -67,12 +71,21 @@
         $mesin = $_POST['mesin_form'];
         $exterior = $_POST['exterior_form'];
         $harga = $_POST['harga_form'];
-
+        $gambar = $_FILES['gambar_form']['name'];
+        //^^Atas variabel
+        //Upload foto
+        if(strlen($gambar)>0){
+            if(is_uploaded_file($_FILES['gambar_form']['tmp_name'])){
+                move_uploaded_file($_FILES['gambar_form']['tmp_name'],"lelangmobil/gambar/".$gambar);
+            }
+        }
+        
+        //Nambahin
         include_once("config.php");
         $list = mysqli_query($mysqli, "INSERT INTO kendaraan(tahun_kendaraan,merek_kendaraan,
-        model_kendaraan,transmisi_kendaraan,plat_no_kendaraan,nilai_kondisi_interior,nilai_kondisi_mesin,
-        nilai_kondisi_exterior,harga_awal,status_kendaraan) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
-        '$mesin','$exterior','$harga','Garasi')");
+                model_kendaraan,transmisi_kendaraan,plat_no_kendaraan,nilai_kondisi_interior,nilai_kondisi_mesin,
+                nilai_kondisi_exterior,harga_awal,status_kendaraan,file_gambar) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
+                '$mesin','$exterior','$harga','Garasi','$gambar')");
 
         header("Location:Dashboard.php");
 
