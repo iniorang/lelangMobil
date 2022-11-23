@@ -21,6 +21,7 @@
       $inter = $car_data['nilai_kondisi_interior'];
       $mesin = $car_data['nilai_kondisi_mesin'];
       $exterior = $car_data['nilai_kondisi_exterior'];
+      /*-Grading-*/
       if($inter >= 90){
         $gradeInt = "A";
      }elseif($inter >= 70){
@@ -54,6 +55,7 @@
      }else {
         $gradeExt = "E";
      }
+     /*-Munculin kartu tiap data di db-*/
       echo '
     <a href="detail.php?id='.$car_data['id'].'">
     <div class="row">
@@ -82,6 +84,7 @@
       $inter = $car_data['nilai_kondisi_interior'];
       $mesin = $car_data['nilai_kondisi_mesin'];
       $exterior = $car_data['nilai_kondisi_exterior'];
+      /*-Grading-*/
       if($inter >= 90){
         $gradeInt = "A";
      }elseif($inter >= 70){
@@ -115,6 +118,7 @@
      }else {
         $gradeExt = "E";
      }
+     /*-Munculin kartu tiap data di db-*/
         echo '
         <a href="detail.php?id='.$car_data['id'].'">
         <div class="row">
