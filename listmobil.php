@@ -62,9 +62,9 @@
         <h4>Rp'.$car_data['harga_awal'].'</h4>
         <h3>'.$car_data['tahun_kendaraan']." ".$car_data['model_kendaraan'].'</h3>
         <p>'.$car_data['merek_kendaraan'].'</p>
-        <p>'.$gradeInt.'</p>
-        <p>'.$gradeEng.'</p>
-        <p>'.$gradeExt.'</p>
+        <p>Nilai Interior '.$gradeInt.'</p>
+        <p>Nilai Mesin '.$gradeEng.'</p>
+        <p>Nilai Exterior '.$gradeExt.'</p>
       </div>
     </div>
     </a>';
@@ -123,9 +123,9 @@
            <h4>Rp'.$car_data['harga_awal'].'</h4>
             <h3>'.$car_data['tahun_kendaraan']." ".$car_data['model_kendaraan'].'</h3>
             <p>'.$car_data['merek_kendaraan'].'</p>
-            <p>'.$gradeInt.'</p>
-            <p>'.$gradeEng.'</p>
-            <p>'.$gradeExt.'</p>
+            <p>Nilai Interior '.$gradeInt.'</p>
+            <p>Nilai Mesin '.$gradeEng.'</p>
+            <p>Nilai Exterior '.$gradeExt.'</p>
           </div>
         </div>
         </a>';
