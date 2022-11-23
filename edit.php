@@ -20,11 +20,12 @@
         $mesin = $_POST['mesin_form'];
         $exterior = $_POST['exterior_form'];
         $harga = $_POST['harga_form'];
+        $status = $_POST['status_form'];
 
         $list = mysqli_query($mysqli,"UPDATE kendaraan SET tahun_kendaraan='$thn',
         merek_kendaraan='$merek',model_kendaraan='$model',transmisi_kendaraan='$trans',
         plat_no_kendaraan='$plat',nilai_kondisi_interior='$inter',nilai_kondisi_mesin='$mesin',
-        nilai_kondisi_exterior='$exterior',harga_awal='$harga' WHERE id='$id'");
+        nilai_kondisi_exterior='$exterior',harga_awal='$harga',status_kendaraan='$status' WHERE id='$id'");
         header("Location:Dashboard.php");
     }
     ?>
@@ -44,6 +45,7 @@
         $mesin = $car_data['nilai_kondisi_mesin'];
         $exterior = $car_data['nilai_kondisi_exterior'];
         $harga = $car_data['harga_awal'];
+        $status = $car_data['status_kendaraan'];
     }
     ?>
     
@@ -61,9 +63,11 @@
             <label for="Model">Model kendaraan</label><br>
             <input type="text" name="model_form" value=<?php echo $model;?> required>
         </p>
+        <p>
             <label for="Transmission">Transmission</label><br>
             <input type="radio" name="transmission" value="Automatic" required <?php if($trans == 'Automatic') echo 'checked="checked"'?>>Automatic
             <input type="radio" name="transmission" value="Manual" <?php if($trans == 'Manual') echo 'checked="checked"'?>>Manual
+        </p>
         <p>
             <label for="Plat">Plat Nomer kendaraan</label><br>
             <input type="text" name="plat_form" value=<?php echo $plat;?> required>
@@ -83,6 +87,11 @@
         <p>
             <label for="Harga">Harga awal</label><br>
             <input type="number" name="harga_form" value=<?php echo $harga;?> required>
+        </p>
+        <p>
+            <label for="Status">Status</label><br>
+            <input type="radio" name="status_form" value="Garasi" required <?php if($status == 'Garasi') echo 'checked="checked"'?>>Di Garasi
+            <input type="radio" name="status_form" value="Dilelang" <?php if($status == 'Dilelang') echo 'checked="checked"'?>>Dilelang
         </p>
         <td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
         <button type="submit" name="Update">Simpan</button>

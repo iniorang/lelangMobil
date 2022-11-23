@@ -65,8 +65,8 @@
         include_once("config.php");
         $list = mysqli_query($mysqli,"INSERT INTO kendaraan(tahun_kendaraan,merek_kendaraan,
         model_kendaraan,transmisi_kendaraan,plat_no_kendaraan,nilai_kondisi_interior,nilai_kondisi_mesin,
-        nilai_kondisi_exterior,harga_awal) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
-        '$mesin','$exterior','$harga')");
+        nilai_kondisi_exterior,harga_awal,status_kendaraan) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
+        '$mesin','$exterior','$harga','Garasi')");
 
         header("Location:Dashboard.php");
         
