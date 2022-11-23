@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2022 at 04:59 AM
+-- Generation Time: Nov 23, 2022 at 04:54 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -37,19 +37,17 @@ CREATE TABLE `kendaraan` (
   `nilai_kondisi_interior` int(100) NOT NULL,
   `nilai_kondisi_mesin` int(100) NOT NULL,
   `nilai_kondisi_exterior` int(100) NOT NULL,
-  `harga_awal` int(100) NOT NULL
+  `status_kendaraan` varchar(10) NOT NULL,
+  `harga_awal` int(100) NOT NULL,
+  `file_gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kendaraan`
 --
 
-INSERT INTO `kendaraan` (`id`, `tahun_kendaraan`, `merek_kendaraan`, `model_kendaraan`, `transmisi_kendaraan`, `plat_no_kendaraan`, `nilai_kondisi_interior`, `nilai_kondisi_mesin`, `nilai_kondisi_exterior`, `harga_awal`) VALUES
-(1, 2001, 'dadad', 'adadad', 'dasdada', 'dasdada', 12, 12, 12, 34),
-(2, 2001, 'sadad', 'sad', 'automatic', '321', 23, 23, 21, 23),
-(3, 2001, 'sadad', 'adadad', 'Automatic', 'adad', 23, 34, 32, 2000),
-(4, 0, '', '', '', '', 0, 0, 0, 0),
-(5, 231, 'safsfs', 'asdad', 'Manual', 'adada', 213, 32, 23, 32);
+INSERT INTO `kendaraan` (`id`, `tahun_kendaraan`, `merek_kendaraan`, `model_kendaraan`, `transmisi_kendaraan`, `plat_no_kendaraan`, `nilai_kondisi_interior`, `nilai_kondisi_mesin`, `nilai_kondisi_exterior`, `status_kendaraan`, `harga_awal`, `file_gambar`) VALUES
+(35, 213, '132', 'sdf', 'Manual', '3424', 43, 43, 43, 'Garasi', 213122, 'file.JPG');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +67,7 @@ ALTER TABLE `kendaraan`
 -- AUTO_INCREMENT for table `kendaraan`
 --
 ALTER TABLE `kendaraan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

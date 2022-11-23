@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+    margin: 0 auto;
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    margin: auto;
+
+}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+  body{
+    background-color: cyan;
+  }
+  .dashboard{
+    background-color: white;
+    padding: 30px;
+    border-radius: 7px;
+    margin: auto;
+    width: fit-content;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  button{
+    margin-top: 5px;
+    background-color: cyan;
+    color: black;
+    font-size: 10px;
+    padding: 30px 30px;
+    border: 0px solid black;
+    
+  }
+
+  .form-group{
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 7px;
+    margin: auto;
+    width: 70%;
+  }
+  .form-input  input[type=text],[type=email],[type=datetime-local],[type=number]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+  }
+  .form-input label{
+    font-size: 20px
+  }
+

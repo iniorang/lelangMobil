@@ -12,6 +12,7 @@
 
 <body>
     <div class="form-group">
+        <h1>Tambah</h1>
         <form action="tambah.php" method="post" enctype="multipart/form-data">
             <div class="form-input">
                 <label for="Tahun">Tahun kendaraan</label><br>

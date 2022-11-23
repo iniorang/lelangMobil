@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
 <?php
     include_once("config.php");
@@ -51,6 +52,7 @@
 
 <body>
     <div class="form-group">
+        <h1>Edit</h1>
         <form action="edit.php" method="post">
             <div class="form-input">
                 <label for="Tahun">Tahun kendaraan</label><br>
@@ -104,10 +106,10 @@
             </div>
             <td><input type="hidden" name="id" value=<?php echo $_GET['id']; ?>></td>
             <button type="submit" name="Update">Simpan</button>
-            <a href="Dashboard.php">
-                <button>Batalkan</button>
-            </a>
         </form>
+        <a href="Dashboard.php">
+            <button>Batalkan</button>
+        </a>
     </div>
 </body>
 
