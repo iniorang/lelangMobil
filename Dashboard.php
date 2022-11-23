@@ -21,7 +21,7 @@ $list = mysqli_query($mysqli,"SELECT * FROM kendaraan ORDER BY id DESC");
             <td>Tahun</td> <td>Merek</td> <td>Model</td> <td>Transmisi</td>
             <td>Plat</td> <td>Nilai interior</td> <td>Nilai Mesin</td>
             <td>Nilai Exterior</td> <td>Harga Awal</td> <td>Status</td>
-             <td>Action</td>
+            <td>Gambar</td> <td>Action</td>
         </tr>
         <?php 
         while($car_data = mysqli_fetch_array($list)){
@@ -36,6 +36,7 @@ $list = mysqli_query($mysqli,"SELECT * FROM kendaraan ORDER BY id DESC");
             echo "<td>".$car_data['nilai_kondisi_exterior']."</td>";
             echo "<td> Rp".$car_data['harga_awal']."</td>";
             echo "<td>".$car_data['status_kendaraan']."</td>";
+            echo "<td>".$car_data['file_gambar']."</td>";
             echo "<td><a href='edit.php?id=$car_data[id]'>Edit</a>
             | <a href='delet.php?id=$car_data[id]'>Delete</a></td>
             </tr>" ;

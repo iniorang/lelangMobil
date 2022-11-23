@@ -12,8 +12,8 @@
 
 <body>
     <div class="form-group">
-        <form action="tambah.php" method="post">
-            <div class="form-input" enctype="multipart/form-data">
+        <form action="tambah.php" method="post" enctype="multipart/form-data">
+            <div class="form-input">
                 <label for="Tahun">Tahun kendaraan</label><br>
                 <input type="number" name="tahun_form" required>
             </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="form-input">
                 <label for="Gambar">Gambar</label><br>
-                <input type="file" name="gambar_form" required>
+                <input type="file" name="gambar_form">
             </div>
             <button type="submit" name="Submit">Simpan</button>
         </form>
@@ -76,7 +76,7 @@
         //Upload foto
         if(strlen($gambar)>0){
             if(is_uploaded_file($_FILES['gambar_form']['tmp_name'])){
-                move_uploaded_file($_FILES['gambar_form']['tmp_name'],"lelangmobil/gambar/".$gambar);
+                move_uploaded_file($_FILES['gambar_form']['tmp_name'],"file/".$gambar);
             }
         }
         
@@ -86,8 +86,6 @@
                 model_kendaraan,transmisi_kendaraan,plat_no_kendaraan,nilai_kondisi_interior,nilai_kondisi_mesin,
                 nilai_kondisi_exterior,harga_awal,status_kendaraan,file_gambar) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
                 '$mesin','$exterior','$harga','Garasi','$gambar')");
-
-        header("Location:Dashboard.php");
 
     }
     ?>

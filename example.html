@@ -1,11 +1,31 @@
-<a href="detail.php?id=$car_data[id]">
-    <div class="row">
+<a href="detail.php?id=' . $car_data['id'] . '">
+  <div class="row">
     <div class="column">
       <div class="card">
-        <h3>'.$car_data['tahun_kendaraan']." ".$car_data['model_kendaraan'].'</h3>
-        <p>'.$car_data['merek_kendaraan'].'</p>
-        <p>Some text</p>
-        <p>Some text</p>
+        <div class="img">
+          <img src=file/' . $car_data['file_gambar'] . '>
+    </div>
+        <h4>Rp' . $car_data['harga_awal'] . '</h4>
+        <h3>' . $car_data['tahun_kendaraan'] . " " . $car_data['model_kendaraan'] . '</h3>
+        <p>' . $car_data['merek_kendaraan'] . '</p>
+        <p>Nilai Interior ' . $gradeInt . '</p>
+        <p>Nilai Mesin ' . $gradeEng . '</p>
+        <p>Nilai Exterior ' . $gradeExt . '</p>
       </div>
     </div>
-</a>
+</a>' <a href="detail.php?id='.$car_data['id'].'">
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <div class="img">
+                  <img src="file/'.$car_data['file_gambar'].'>
+     </div>
+     <h4>Rp'.$car_data['harga_awal'].'</h4>
+      <h3>'.$car_data['tahun_kendaraan']." ".$car_data['model_kendaraan'].'</h3>
+      <p>'.$car_data['merek_kendaraan'].'</p>
+      <p>Nilai Interior '.$gradeInt.'</p>
+      <p>Nilai Mesin '.$gradeEng.'</p>
+      <p>Nilai Exterior '.$gradeExt.'</p>
+    </div>
+  </div>
+  </a>

@@ -67,6 +67,14 @@
     <div class="header-car">
         <?php echo "<h1>".$thn." ".$merek." ".$model."</h1>" ?>
     </div>
+    <div class="image-car">
+      <?php 
+      	$list = mysqli_query($mysqli,"SELECT * FROM kendaraan WHERE id=$id");
+         while($car_data = mysqli_fetch_array($list)) {     
+             echo "<img src='file/".$car_data['file_gambar']."' >";   
+        }  
+      ?>
+    </div>
     <div class="detail-car">
         <label>Transmisi</label><?php echo "<p>$trans</p>" ?>
         <label>Plat Nomor</label><?php echo "<p>$plat</p>" ?>
