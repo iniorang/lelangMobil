@@ -9,7 +9,11 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-
+<style>
+    body{
+        background-color: cyan;
+    }
+</style>
 <body>
     <div class="form-group">
         <h1>Tambah</h1>
@@ -58,7 +62,7 @@
             <button type="submit" name="Submit">Simpan</button>
         </form>
         <a href="Dashboard.php">
-            <button type="cancel" name="Cancel">Batalkan</button>
+            <button type="cancel" name="Cancel">Kembali</button>
         </a>
     </div>
     <?php
@@ -88,6 +92,12 @@
                 nilai_kondisi_exterior,harga_awal,status_kendaraan,file_gambar) VALUES('$thn','$merek','$model','$trans','$plat','$inter',
                 '$mesin','$exterior','$harga','Garasi','$gambar')");
 
+        $msg = "Penmabahan mobil berhasil";
+        
+        if($list){
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+            header("Location:Dashboard.php");
+        }
     }
     ?>
 </body>

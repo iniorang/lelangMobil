@@ -13,6 +13,11 @@
 include_once("config.php");
 $list = mysqli_query($mysqli, "SELECT * FROM kendaraan ORDER BY id DESC");
 ?>
+<style>
+    body{
+        background-color: cyan;
+    }
+</style>
 
 <body>
     <div class="dashboard">

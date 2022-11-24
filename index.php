@@ -10,6 +10,7 @@
   <script src='main.js'></script>
 </head>
 
+
 <body>
   <div class="group-trade">
     <h1>Mobil dalam proses lelang</h1>

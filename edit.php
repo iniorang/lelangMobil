@@ -8,6 +8,11 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
+<style>
+    body{
+        background-color: cyan;
+    }
+</style>
 <?php
     include_once("config.php");
 
@@ -29,6 +34,13 @@
         plat_no_kendaraan='$plat',nilai_kondisi_interior='$inter',nilai_kondisi_mesin='$mesin',
         nilai_kondisi_exterior='$exterior',harga_awal='$harga',status_kendaraan='$status' WHERE id='$id'");
         header("Location:Dashboard.php");
+
+        $msg = "Perubahan mobil berhasil";
+        
+        if($list){
+            echo "<script type='text/javascript'>alert('$msg');</script>";
+            header("Location:Dashboard.php");
+        }
     }
     ?>
 

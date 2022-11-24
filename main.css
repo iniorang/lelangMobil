@@ -17,6 +17,7 @@
   /* Remove extra left and right margins, due to padding */
   .row {
     margin: auto;
+    padding: 20px;
 
 }
   
@@ -38,21 +39,22 @@
   
   /* Style the counter cards */
   .card {
+    margin-top: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 16px;
     text-align: center;
     background-color: #f1f1f1;
   }
-
-  body{
-    background-color: cyan;
+  .card img{
+    width: 35ex;
+    height: 22ex;
   }
+
   .dashboard{
     background-color: white;
     padding: 30px;
     border-radius: 7px;
     margin: auto;
-    width: fit-content;
   }
   table {
     font-family: arial, sans-serif;
@@ -100,3 +102,11 @@
     font-size: 20px
   }
 
+  .group-car{
+    background-color: #f1f1f1;
+    padding: 30px;
+    border-radius: 7px;
+    margin: auto;
+    width: 70%;
+    border: 5px;
+  }
